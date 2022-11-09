@@ -1,0 +1,15 @@
+:root {
+  --border-radios: 24px;
+  --primary: #724DF0;
+  --primary-filter: invert(56%) sepia(72%) saturate(7492%) hue-rotate(241deg) brightness(94%) contrast(99%);
+  --primary-rgb: 114, 77, 250;
+  --white: #fff;
+  --font-family: "Montserrat";
+  --color:#362F62;
+  --color-filter: invert(10%) sepia(2%) saturate(0%) hue-rotate(181deg) brightness(96%) contrast(90%);
+  --transition-delay: 0.3s;
+}
+
+@import "base";
+@import "container";
+@import "transition";
