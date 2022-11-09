@@ -23,6 +23,10 @@ export default {
 </script>
 
 <style scoped>
+.select{
+  margin-bottom: 30px;
+}
+
 input {
   display: none;
 }

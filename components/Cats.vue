@@ -1,17 +1,21 @@
 <template>
   <div>
-    <transition-group name="flip-list" tag="div" class="cats">
-      <div v-for="cat of filteredCats" :key="cat.id">
-        <nuxt-link :to="'catalog/' + cat.id">
-          <Cat :cat="cat" :key="cat.id"/>
-        </nuxt-link>
-      </div>
-    </transition-group>
+    <div v-if="filteredCats.length">
+      <transition-group name="flip-list" tag="div" class="cats">
+        <div v-for="cat of filteredCats" :key="cat.id">
+          <nuxt-link :to="'catalog/' + cat.id">
+            <Cat :cat="cat" :key="cat.id"/>
+          </nuxt-link>
+        </div>
+      </transition-group>
+    </div>
+    <div v-else class="empty">Сожалеем, но таких котиков нет :(</div>
   </div>
+
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import {mapGetters} from 'vuex'
 
 import Cat from "~/components/Cat";
 
@@ -38,5 +42,9 @@ export default {
 
 .flip-list-move {
   transition: transform 1s;
+}
+
+.empty{
+  font-size: 24px;
 }
 </style>

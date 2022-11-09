@@ -1,10 +1,10 @@
 <template>
   <div class="catalog">
     <div class="container">
+      <h1 class="header">Каталог</h1>
       <div class="catalog-wrapper">
         <FilterComponent/>
         <div class="catalog-content">
-          <h1 class="header">Каталог</h1>
           <button @click="sort" class="reset-btn sort active">
             <img v-if="order" src="~/assets/sort.svg" alt="sort" width="24" height="24">
             <img v-else src="~/assets/sort-active.svg" alt="sort" width="24" height="24">
@@ -37,9 +37,9 @@ export default {
   },
   methods: {
     sort() {
-        this.$store.dispatch('cats/setOrder')
-        this.$store.dispatch('cats/orderCats')
-    },
+      this.$store.dispatch('cats/setOrder')
+      this.$store.dispatch('cats/orderCats')
+    }
   }
 }
 </script>
@@ -53,6 +53,7 @@ export default {
 
 .header {
   margin-top: 0;
+  margin-left: 300px;
   margin-bottom: 45px;
   font-size: 36px;
   font-weight: 400;
@@ -67,6 +68,16 @@ export default {
   img {
     margin-right: 10px;
     filter: var(--color-filter);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    margin-bottom: 30px;
+    margin-left: 0;
+  }
+  .catalog-wrapper {
+    display: block;
   }
 }
 </style>

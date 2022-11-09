@@ -13,6 +13,16 @@ html {
   font-family: var(--font-family);
   color: var(--color);
   font-size: 16px;
+  scrollbar-color: rgba(var(--primary-rgb), 0.3) rgba(#2e2b39, 0.3);
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--primary-rgb), 0.3);
+    border-radius: 10px;
+  }
 }
 
 body {
@@ -30,6 +40,8 @@ button {
   color: var(--color);
   font-size: 1rem;
   cursor: pointer;
+  border-width: 1px;
+  transition: color var(--transition-delay), background-color var(--transition-delay), border-color var(--transition-delay);
 }
 
 .reset-btn {

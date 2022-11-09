@@ -8,11 +8,12 @@
         <span class="back-text">Вернуться в каталог</span>
       </nuxt-link>
       <div class="cat-wrapper">
-        <img v-if="cat.img" :src="cat.img" :alt="cat.title" width="500" height="500"  class="img">
-        <img v-else src="~/assets/placeholder-image.png" alt="placeholder" width="500" height="500"  class="img">
+        <img v-if="cat.img" :src="cat.img" :alt="cat.title" width="500" height="500" class="img">
+        <img v-else src="~/assets/placeholder-image.png" alt="placeholder" width="500" height="500" class="img">
         <div class="desc">
           <div class="title">{{ cat.title }}</div>
-          <div class="price">{{ updatePrice(cat.price) }}</div>
+          <div class="price" v-if="cat.price">{{ updatePrice(cat.price) }}</div>
+          <div class="free" v-else>Бесплатно</div>
         </div>
       </div>
     </div>
@@ -58,7 +59,7 @@ export default {
     .image {
       border-color: var(--primary);
 
-      img{
+      img {
         filter: var(--primary-filter);
       }
     }
@@ -86,37 +87,49 @@ export default {
 }
 
 .img {
-  position: relative;
+  max-width: 100%;
+  height: auto;
   margin-right: 60px;
   object-fit: cover;
   border-radius: var(--border-radios);
   overflow: hidden;
-
-  &:after {
-    content: attr(alt);
-    font-size: 16px;
-    position: absolute;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    text-align: center;
-    border: 1px solid rgba(114, 77, 240, 0.3);
-    border-radius: var(--border-radios);
-  }
 }
 
 .title,
-.price {
+.price,
+.free {
   font-size: 36px;
 }
 
 .title {
   margin-bottom: 20px;
+}
+
+.free {
+  color: var(--primary);
+}
+
+@media screen and (max-width: 767px) {
+  .cat {
+    margin-top: 0;
+  }
+
+  .cat-wrapper {
+    display: block;
+  }
+
+  .title,
+  .price,
+  .free {
+    font-size: 20px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .img {
+    margin-bottom: 25px;
+  }
 }
 </style>

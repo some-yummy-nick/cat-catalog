@@ -21,7 +21,11 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'
       }
-    ]
+    ],
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ],
   },
   components: {Header, Footer}
 }

@@ -27,6 +27,14 @@ export function filterCats(filter, cats) {
         filteredList = searchList
     }
 
+    if (filter.free && !filter.priced) {
+        filteredList = filteredList.filter(cat => cat.price === 0);
+    }
+
+    if (filter.priced && !filter.free) {
+        filteredList = filteredList.filter(cat => cat.price !== 0);
+    }
+
     return filteredList
 }
 
@@ -42,4 +50,8 @@ export function orderCats(order, leads) {
     })
 
     return orderedList
+}
+
+export function getFreeCats(order, cats) {
+
 }

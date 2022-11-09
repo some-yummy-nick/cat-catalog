@@ -60,4 +60,10 @@ export default {
     color: var(--white);
   }
 }
+
+@media screen and (max-width: 767px) {
+  .header {
+    margin-bottom: 30px;
+  }
+}
 </style>
