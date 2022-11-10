@@ -40,21 +40,12 @@ export default {
       'category': 'cats/getCategory',
     }),
   },
-  mounted() {
-
-  },
   methods: {
     toggle() {
       this.isActive = !this.isActive;
-      if (this.isActive) {
-        this.openSelectCustom()
-      } else {
+      if (!this.isActive) {
         this.closeSelectCustom()
       }
-    },
-
-    openSelectCustom() {
-
     },
 
     closeSelectCustom() {
@@ -78,7 +69,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// Both native and custom selects must have the same width/height.
 .selectNative,
 .selectCustom {
   position: relative;
@@ -86,7 +76,6 @@ export default {
   height: 40px;
 }
 
-// Make sure the custom select does not mess with the layout
 .selectCustom {
   position: absolute;
   top: 0;
@@ -94,31 +83,20 @@ export default {
   display: none;
 }
 
-// This media query detects devices where the primary
-// input mechanism can hover over elements. (e.g. computers with a mouse)
 @media (hover: hover) {
-  // Since we are using a mouse, it's safe to show the custom select.
   .selectCustom {
     display: block;
   }
 
-  // In a computer using keyboard? Then let's hide back the custom select
-  // while the native one is focused:
   .selectNative:focus + .selectCustom {
     display: none;
   }
 }
 
-/* Add the focus states too, They matter, always! */
 .selectNative:focus,
 .selectCustom.isActive .selectCustom-trigger {
   outline: none;
 }
-
-//
-// Rest of the styles to create the custom select.
-// Just make sure the native and the custom have a similar "box" (the trigger).
-//
 
 .select {
   position: relative;

@@ -45,7 +45,6 @@ export function filterCats(filter, cats) {
 
 export function orderCats(order, leads) {
     const orderedList = [...leads];
-    console.log(order);
     orderedList.sort(function (a, b) {
         if (order === true) {
             return a['price'] > b['price'] ? -1 : 1
