@@ -16,6 +16,9 @@ import Footer from '~/components/Footer';
 export default {
   name: 'default',
   head: {
+    htmlAttrs: {
+      lang: 'ru'
+    },
     link: [
       {
         rel: 'stylesheet',

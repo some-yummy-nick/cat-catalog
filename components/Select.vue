@@ -1,6 +1,6 @@
 <template>
   <div class="selectWrapper">
-    <select class="selectNative js-selectNative" :value="category.label" @change="change" aria-labelledby="jobLabel">
+    <select class="selectNative js-selectNative" :value="category.label" @change="change">
       <option value="sel" disabled="" :selected="!category.label">Выберите категорию</option>
       <option v-for="option of options" :value="option.label" :key="'option-' + option.id">
         {{ option.label }}
