@@ -80,14 +80,9 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
 }
 
 @media (hover: hover) {
-  .selectCustom {
-    display: block;
-  }
-
   .selectNative:focus + .selectCustom {
     display: none;
   }
