@@ -7,8 +7,13 @@
   border-radius: var(--border-radios);
   border-color: var(--primary);
 
-  &:hover{
+  &:hover {
     background-color: rgba(var(--primary-rgb), 0.1);
+  }
+
+  &:focus-visible {
+    background-color: var(--primary);
+    color: var(--white);
   }
 
   &_active {
@@ -18,6 +23,11 @@
     &:hover {
       background-color: rgba(var(--primary-rgb), 0.7);
       border-color: rgba(var(--primary-rgb), 0.7);
+    }
+
+    &:focus-visible {
+      background-color: var(--white);
+      color: var(--primary);
     }
   }
 }

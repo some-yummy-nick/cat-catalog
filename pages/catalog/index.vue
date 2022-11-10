@@ -68,6 +68,14 @@ export default {
     margin-right: 10px;
     filter: var(--color-filter);
   }
+
+  &:hover{
+    color: var(--primary);
+
+    img{
+      filter: var(--primary-filter);
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {

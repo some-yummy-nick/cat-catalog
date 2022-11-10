@@ -45,6 +45,10 @@ export default {
     &:checked ~ .checkbox__custom img {
       opacity: 1;
     }
+
+    &:focus-visible ~ .checkbox__block {
+      color: var(--primary);
+    }
   }
 
   &__custom {

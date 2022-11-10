@@ -37,13 +37,12 @@ export function filterCats(filter, cats) {
     if (filter.category.id) {
         filteredList = filteredList.filter(cat => cat.categories.includes(filter.category.id));
     }
-
+    filteredList = orderCats(filter.order, filteredList);
     return filteredList
 }
 
 export function orderCats(order, leads) {
-    const orderedList = [...leads]
-
+    const orderedList = [...leads];
     orderedList.sort(function (a, b) {
         if (order === true) {
             return a["price"] > b["price"] ? -1 : 1
@@ -53,8 +52,4 @@ export function orderCats(order, leads) {
     })
 
     return orderedList
-}
-
-export function getFreeCats(order, cats) {
-
 }

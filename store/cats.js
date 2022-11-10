@@ -54,7 +54,7 @@ export const actions = {
 
 export const mutations = {
     setOrder(state) {
-        state.filter.order = !state.filter.order
+        state.filter.order = !Boolean(state.filter.order)
     },
     setApply(state) {
         state.filter.apply = !state.filter.apply

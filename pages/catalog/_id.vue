@@ -24,7 +24,7 @@
 import {priceRu} from "~/helpers";
 
 export default {
-  name: "_id",
+  name: "cat",
   head() {
     return {
       title: this.cat.title,
@@ -49,7 +49,7 @@ export default {
 }
 
 .back {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   margin-bottom: 35px;
 
