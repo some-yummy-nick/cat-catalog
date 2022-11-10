@@ -1,14 +1,21 @@
 import data from '~/data/cats.json'
+import categories from '~/data/categories.json'
+
 import {filterCats, orderCats} from '~/helpers'
 
 export const state = () => ({
     list: data.products,
     filteredLists: data.products,
+    categories: categories.options,
     filter: {
         search: '',
+        category: {
+            id: null,
+            label: null
+        },
         free: false,
         priced: false,
-        order: true,
+        order: null,
         apply: false,
     }
 })
@@ -22,6 +29,9 @@ export const actions = {
     },
     setFree({commit}) {
         commit('setFree')
+    },
+    setCategory({commit}, payload) {
+        commit('setCategory', payload)
     },
     setPriced({commit}) {
         commit('setPriced')
@@ -52,6 +62,9 @@ export const mutations = {
     setFree(state) {
         state.filter.free = !state.filter.free
     },
+    setCategory(state, payload) {
+        state.filter.category = payload;
+    },
     setPriced(state) {
         state.filter.priced = !state.filter.priced
     },
@@ -71,6 +84,10 @@ export const mutations = {
         state.filter.search = '';
         state.filter.free = false;
         state.filter.priced = false;
+        state.filter.category = {
+            id: null,
+            label: null
+        };
     }
 }
 
@@ -83,6 +100,12 @@ export const getters = {
     },
     getFree: (state) => {
         return state.filter.free
+    },
+    getCategory: (state) => {
+        return state.filter.category
+    },
+    getCategories: (state) => {
+        return state.categories
     },
     getPriced: (state) => {
         return state.filter.priced
@@ -97,6 +120,6 @@ export const getters = {
         return state.filter.search
     },
     isClear: (state) => {
-        return state.filter.search || state.filter.free || state.filter.priced
+        return Boolean(state.filter.search) && !state.filter.apply
     },
 }

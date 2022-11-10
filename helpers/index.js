@@ -34,6 +34,9 @@ export function filterCats(filter, cats) {
     if (filter.priced && !filter.free) {
         filteredList = filteredList.filter(cat => cat.price !== 0);
     }
+    if (filter.category.id) {
+        filteredList = filteredList.filter(cat => cat.categories.includes(filter.category.id));
+    }
 
     return filteredList
 }
@@ -42,9 +45,9 @@ export function orderCats(order, leads) {
     const orderedList = [...leads]
 
     orderedList.sort(function (a, b) {
-        if (order) {
+        if (order === true) {
             return a["price"] > b["price"] ? -1 : 1
-        } else {
+        } else if (order === false) {
             return a["price"] > b["price"] ? 1 : -1
         }
     })

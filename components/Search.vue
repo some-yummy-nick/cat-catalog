@@ -18,7 +18,9 @@ export default {
   },
   methods: {
     handleSearch: debounce(function (e) {
-      this.$store.dispatch('cats/filterSearch', e.target.value)
+      if(e.target.value.trim()){
+        this.$store.dispatch('cats/filterSearch', e.target.value)
+      }
     }, 500),
   }
 }

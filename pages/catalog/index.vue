@@ -26,7 +26,6 @@ import {mapGetters} from "vuex";
 export default {
   name: "index",
   components: {FilterComponent, Cats},
-
   head: {
     title: 'Каталог'
   },
