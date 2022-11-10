@@ -28,7 +28,7 @@ export default {
 <style scoped lang="scss">
 .header {
   margin-bottom: 60px;
-  padding: 20px 0;
+  padding: 18px 0;
   border-bottom: 1px solid var(--primary);
 }
 
@@ -39,6 +39,11 @@ export default {
 
 .logo {
   margin-right: 45px;
+}
+
+.links{
+  display: flex;
+  align-items: center;
 }
 
 .link {
@@ -64,6 +69,10 @@ export default {
 @media screen and (max-width: 767px) {
   .header {
     margin-bottom: 30px;
+  }
+
+  .logo{
+    margin-right: 20px;
   }
 }
 </style>
