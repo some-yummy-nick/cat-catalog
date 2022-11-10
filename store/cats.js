@@ -26,6 +26,7 @@ export const actions = {
     },
     setApply({commit}) {
         commit('setApply')
+        commit('orderCats')
     },
     setFree({commit}) {
         commit('setFree')
