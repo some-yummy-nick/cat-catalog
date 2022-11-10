@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import Select from "~/components/Select";
-import Search from "@/components/Search";
-import Checkbox from "~/components/Checkbox";
-import {mapGetters} from "vuex";
+import Select from '~/components/Select';
+import Search from '@/components/Search';
+import Checkbox from '~/components/Checkbox';
+import {mapGetters} from 'vuex';
 
 export default {
-  name: "FilterComponent",
+  name: 'FilterComponent',
   components: {Checkbox, Search, Select},
   data: () => ({
     show: false,

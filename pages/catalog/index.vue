@@ -19,12 +19,12 @@
 
 <script>
 
-import FilterComponent from "~/components/Filter";
-import Cats from "~/components/Cats";
-import {mapGetters} from "vuex";
+import FilterComponent from '~/components/Filter';
+import Cats from '~/components/Cats';
+import {mapGetters} from 'vuex';
 
 export default {
-  name: "index",
+  name: 'index',
   components: {FilterComponent, Cats},
   head: {
     title: 'Каталог'

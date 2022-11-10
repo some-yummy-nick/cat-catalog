@@ -7,10 +7,10 @@
 
 <script>
 import {debounce} from '~/helpers'
-import {mapGetters} from "vuex";
+import {mapGetters} from 'vuex';
 
 export default {
-  name: "Search",
+  name: 'Search',
   computed: {
     ...mapGetters({
       'search': 'cats/getFilteredSearch',

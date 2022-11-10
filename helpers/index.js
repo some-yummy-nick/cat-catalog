@@ -45,9 +45,9 @@ export function orderCats(order, leads) {
     const orderedList = [...leads];
     orderedList.sort(function (a, b) {
         if (order === true) {
-            return a["price"] > b["price"] ? -1 : 1
+            return a['price'] > b['price'] ? -1 : 1
         } else if (order === false) {
-            return a["price"] > b["price"] ? 1 : -1
+            return a['price'] > b['price'] ? 1 : -1
         }
     })
 

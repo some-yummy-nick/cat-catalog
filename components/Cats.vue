@@ -17,10 +17,10 @@
 <script>
 import {mapGetters} from 'vuex'
 
-import Cat from "~/components/Cat";
+import Cat from '~/components/Cat';
 
 export default {
-  name: "Cats",
+  name: 'Cats',
   components: {Cat},
   computed: {
     ...mapGetters({

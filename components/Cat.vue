@@ -16,7 +16,7 @@
 import {priceRu} from '~/helpers';
 
 export default {
-  name: "Cat",
+  name: 'Cat',
   props: [
     'cat'
   ],

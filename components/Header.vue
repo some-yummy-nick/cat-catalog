@@ -16,10 +16,10 @@
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
   computed: {
     isRouteActive: function () {
-      return this.$nuxt.$route.path.includes("catalog");
+      return this.$nuxt.$route.path.includes('catalog');
     }
   }
 }

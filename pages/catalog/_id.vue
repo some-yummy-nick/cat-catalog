@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import {priceRu} from "~/helpers";
+import {priceRu} from '~/helpers';
 
 export default {
-  name: "cat",
+  name: 'cat',
   head() {
     return {
       title: this.cat.title,

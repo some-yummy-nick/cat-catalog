@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "Checkbox",
+  name: 'Checkbox',
   props: [
     'text',
     'change',
